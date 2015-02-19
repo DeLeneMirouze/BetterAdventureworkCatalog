@@ -44,8 +44,8 @@ namespace BetterAdventureWorksWeb.App_Start
             container.RegisterType<ApiConnection>(
                 new InjectionFactory(c =>
                     ApiConnection.Create(
-                    CloudConfigurationManager.GetSetting("Azure.Search.ServiceName"),
-                    CloudConfigurationManager.GetSetting("Azure.Search.ApiKey"))));
+                    CloudConfigurationManager.GetSetting("SearchServiceName"),
+                    CloudConfigurationManager.GetSetting("SearchServiceApiKey"))));
 
             container.RegisterType<ICatalogSearchRepository, CatalogSearchRepository>();
 

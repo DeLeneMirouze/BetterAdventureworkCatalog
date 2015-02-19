@@ -26,6 +26,7 @@
     </div>
 
     <div class="container body-content">
+        <input type="hidden" value=@System.Configuration.ConfigurationManager.AppSettings["SearchServiceName"] />
         @RenderBody()
 
         @Scripts.Render("~/bundles/bootstrap")
