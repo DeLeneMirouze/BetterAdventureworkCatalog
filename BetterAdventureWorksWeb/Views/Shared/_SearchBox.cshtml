@@ -1,0 +1,27 @@
+﻿
+
+<form action="/Home/Search" method="get">
+    <input 
+           type="search" 
+           name="query" 
+           id="query" 
+           value="@ViewBag.Query" 
+           autocomplete="off" 
+           size="100" /> 
+    
+    <button class="btn btn-primary btn-lg" type="submit">Recherche</button>&nbsp;
+    <select name="mode">
+        <option selected value="any">Any</option>
+        <option value="all">All</option>
+    </select>
+  <br/>  <input type="checkbox" value="BoostWhiteColor" name="ScoringProfile" />Booster vélos blancs
+</form>
+
+
+    <script>
+            $(function () {
+                $("#query").autocomplete({ source: "/home/Suggest", minLength: 3 });
+            });
+    </script>
+
+

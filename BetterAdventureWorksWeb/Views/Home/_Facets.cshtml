@@ -1,0 +1,9 @@
+﻿@model Dictionary<string,List<BetterAdventureWorksWeb.Model.Search.FacetItemViewModel>>
+
+@foreach (string key in Model.Keys)
+{
+    @Html.Raw(key + ": ");
+    @:<ul>
+        Html.RenderPartial("FacetItem", Model[key]);
+    @:</ul>
+}

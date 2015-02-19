@@ -1,0 +1,10 @@
+﻿@using BetterAdventureWorksWeb.Model.Search
+@model List<FacetItemViewModel>
+
+@foreach (FacetItemViewModel item in Model)
+{
+    <li>
+        <a href="@item.Link">@item.Text (@item.Count)</a>
+    </li>
+}
+

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{20C96BBB-C4AC-4A1D-9155-CD8F1E86E64F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConcept", "DemoConcept\DemoConcept.csproj", "{B9EA3025-D9F3-4A43-832D-9212F7B55387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterAdventureWorksWeb", "BetterAdventureWorksWeb\BetterAdventureWorksWeb.csproj", "{C6E03912-64FF-4195-A85E-9253F6A33645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterIndexer", "BetterIndexer\BetterIndexer.csproj", "{5B82B89C-5978-4C73-8859-F72C51ECA10D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EA3025-D9F3-4A43-832D-9212F7B55387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EA3025-D9F3-4A43-832D-9212F7B55387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EA3025-D9F3-4A43-832D-9212F7B55387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EA3025-D9F3-4A43-832D-9212F7B55387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E03912-64FF-4195-A85E-9253F6A33645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E03912-64FF-4195-A85E-9253F6A33645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E03912-64FF-4195-A85E-9253F6A33645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E03912-64FF-4195-A85E-9253F6A33645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B82B89C-5978-4C73-8859-F72C51ECA10D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B82B89C-5978-4C73-8859-F72C51ECA10D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B82B89C-5978-4C73-8859-F72C51ECA10D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B82B89C-5978-4C73-8859-F72C51ECA10D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

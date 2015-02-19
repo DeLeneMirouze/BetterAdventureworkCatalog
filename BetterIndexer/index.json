@@ -1,0 +1,201 @@
+﻿{
+  "name": "catalog",
+    "fields": [
+        {
+            "name": "productID",
+            "type": "Edm.String",
+            "key": true,
+            "searchable": false,
+            "filterable": false,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "name",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": false,
+            "sortable": true,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": true
+        },
+        {
+            "name": "productNumber",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": false,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": true
+        },
+        {
+            "name": "color",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": true,
+            "sortable": true,
+            "facetable": true,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "standardCost",
+            "type": "Edm.Double",
+            "key": false,
+            "searchable": false,
+            "filterable": false,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "listPrice",
+            "type": "Edm.Double",
+            "key": false,
+            "searchable": false,
+            "filterable": true,
+            "sortable": true,
+            "facetable": true,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "size",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": true,
+            "sortable": true,
+            "facetable": true,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "weight",
+            "type": "Edm.Double",
+            "key": false,
+            "searchable": false,
+            "filterable": true,
+            "sortable": false,
+            "facetable": true,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "sellStartDate",
+            "type": "Edm.DateTimeOffset",
+            "key": false,
+            "searchable": false,
+            "filterable": true,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": false,
+            "suggestions": false
+        },
+        {
+            "name": "sellEndDate",
+            "type": "Edm.DateTimeOffset",
+            "key": false,
+            "searchable": false,
+            "filterable": true,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": false,
+            "suggestions": false
+        },
+        {
+            "name": "discontinuedDate",
+            "type": "Edm.DateTimeOffset",
+            "key": false,
+            "searchable": false,
+            "filterable": true,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "categoryName",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": true,
+            "sortable": false,
+            "facetable": true,
+            "retrievable": true,
+            "suggestions": true
+        },
+        {
+            "name": "modelName",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": true,
+            "sortable": false,
+            "facetable": true,
+            "retrievable": true,
+            "suggestions": true
+        },
+        {
+            "name": "description",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": true,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": false
+        },
+        {
+            "name": "descriptionFR",
+            "type": "Edm.String",
+            "key": false,
+            "searchable": true,
+            "filterable": true,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": false,
+            "analyzer": "fr.lucene"
+        },
+        {
+            "name": "booster",
+            "type": "Edm.Int32",
+            "key": false,
+            "searchable": false,
+            "filterable": true,
+            "sortable": false,
+            "facetable": false,
+            "retrievable": true,
+            "suggestions": false
+        }
+    ],
+    "scoringProfiles": [
+        {
+            "name": "BoostWhiteColor",
+            "functions": [
+                {
+                    "type": "magnitude",
+                    "fieldName": "booster",
+                    "boost": 10,
+                    "interpolation": "constant",
+                    "magnitude": {
+                        "boostingRangeStart": 2,
+                        "boostingRangeEnd": 15,
+                        "constantBoostBeyondRange": false
+                    }
+                }
+            ]
+        }
+    ]
+}
+

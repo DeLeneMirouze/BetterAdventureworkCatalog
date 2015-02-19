@@ -1,0 +1,10 @@
+﻿@model BetterAdventureWorksWeb.Model.Search.Product
+
+<li>
+    <h3>
+        @Html.ActionLink(@Model.Name,"Detail", new {productID = @Model.ProductId })       
+    
+    </h3>
+    Prix: @Model.Price<br/>
+    Couleur: @Model.Color
+</li>

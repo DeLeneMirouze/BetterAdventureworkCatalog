@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Azure Search</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <div class="container">
+        <div class="row">
+            @{ Html.RenderPartial("SearchBox");}
+
+
+            <div class="jumbotron">
+                <h1>Mario, le roi du vélo!!!</h1>
+                <p class="lead">Trouvez le vélo de vos rêves au meilleurs prix.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("Scripts", required: false)
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model BetterAdventureWorksWeb.Model.Search.SearchViewModel
+
+
+@if (@Model.ErrorMessage != null)
+{
+    @Model.ErrorMessage
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                @{
+                    Html.RenderPartial("Facets", Model.Facets);
+                }
+            </div>
+             @{
+                Html.RenderPartial("Sort");
+             }
+
+            @{
+                Html.RenderPartial("Product", Model);
+            }
+
+        </div>
+    </div>
+}
+
+

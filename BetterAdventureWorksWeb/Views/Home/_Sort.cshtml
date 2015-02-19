@@ -1,0 +1,12 @@
+﻿
+<form action="/Home/Search" method="get" id="sortForm">
+    <div class="col-md-8">
+        <p>
+            Trier par -
+            <a href="#" onclick="document.getElementById('sort').value = null; document.getElementById('sortForm').submit(); return false;">Pertinence</a>
+            <a href="#" onclick="document.getElementById('sort').value = 'listPrice'; document.getElementById('sortForm').submit(); return false;">Prix</a>
+            <a href="#" onclick="document.getElementById('sort').value = 'color'; document.getElementById('sortForm').submit(); return false;">Couleur</a>
+        </p>
+    </div>
+    <input type="hidden" name="orderBy" id="sort" value="@ViewBag.Sort" />
+</form>
