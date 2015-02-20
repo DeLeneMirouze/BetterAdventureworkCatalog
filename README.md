@@ -2,8 +2,9 @@
 
 This repository is a Proof of Concept for Azure Search
 It is inspired from this project:
+https://azuresearchadventureworksdemo.codeplex.com/
 
-But I solved all the coding issues and try to develop a better quality code for the web site.
+But I solved all the coding issues and try to develop a better quality code.
 
 This Poc demonstrates:
 
@@ -31,4 +32,4 @@ This Poc demonstrates:
 
 ## Notes
 
-All comments are in French, if you meet any problem, please feel free to contact me
+All texts are in French, if you meet any problem, please feel free to contact me

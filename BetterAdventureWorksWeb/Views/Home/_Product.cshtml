@@ -2,14 +2,18 @@
 
 <p>Trouvé @Model.Count produits</p>
 
-<ul>
-    @foreach (BetterAdventureWorksWeb.Model.Search.Product product in Model.Products)
-    {
-        Html.RenderPartial("ProductItem", product);
-    }
-</ul>
+<div class="col-md-6">
 
-@if (Model.NextLink != null)
-{
-    <a href="@Model.NextLink">Voir plus</a>
-}
+    <ul>
+        @foreach (BetterAdventureWorksWeb.Model.Search.Product product in Model.Products)
+        {
+            Html.RenderPartial("ProductItem", product);
+        }
+    </ul>
+
+
+    @if (Model.NextLink != null)
+    {
+        <a href="@Model.NextLink">Voir plus</a>
+    }
+</div>
