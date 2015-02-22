@@ -24,7 +24,7 @@ namespace BetterIndexer
         #region Main
         static void Main(string[] args)
         {
-            _serviceUri = new Uri("https://" + ConfigurationManager.AppSettings["SearchServiceName"] + ".search.windows.net");
+            _serviceUri = new Uri("https://" + ConfigurationManager.AppSettings["Azure.Search.ServiceName"] + ".search.windows.net");
             string indexName = "catalog";
 
             using (AzureSearchHelper azureSearchHelper = new AzureSearchHelper())
@@ -38,7 +38,7 @@ namespace BetterIndexer
                     CreateCatalogIndex(azureSearchHelper, indexName);
 
                     Console.WriteLine("Alimentation de l'index");
-                    LoadDate(azureSearchHelper, indexName);
+                    LoadData(azureSearchHelper, indexName);
                 }
                 catch (Exception e)
                 {
@@ -58,8 +58,8 @@ namespace BetterIndexer
         } 
         #endregion
 
-        #region LoadDate (private)
-        private static void LoadDate(AzureSearchHelper azureSearchHelper, string indexName)
+        #region LoadData (private)
+        private static void LoadData(AzureSearchHelper azureSearchHelper, string indexName)
         {
             _jsonSettings = new JsonSerializerSettings
             {

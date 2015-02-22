@@ -34,8 +34,8 @@ namespace DemoConcept
         {
             // il faut appeler Dispose pour libérer HttpClient d'où le using
             using (ApiConnection apiConnection = ApiConnection.Create(
-                ConfigurationManager.AppSettings["SearchServiceName"],
-                ConfigurationManager.AppSettings["SearchServiceApiKey"]
+                ConfigurationManager.AppSettings["Azure.Search.ServiceName"],
+                ConfigurationManager.AppSettings["Azure.Search.ApiKey"]
                 ))
             {
 

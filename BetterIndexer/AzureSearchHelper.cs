@@ -16,10 +16,10 @@ namespace BetterIndexer
         #region Constructor
         public AzureSearchHelper()
         {
-            ApiVersionString = ConfigurationManager.AppSettings["ApiVersionString"];
+            ApiVersionString = ConfigurationManager.AppSettings["Azure.Search.ApiVersionString"];
             client = new HttpClient();
             // Get the search service connection information from the App.config
-            client.DefaultRequestHeaders.Add("api-key", ConfigurationManager.AppSettings["SearchServiceApiKey"]);
+            client.DefaultRequestHeaders.Add("api-key", ConfigurationManager.AppSettings["Azure.Search.ApiKey"]);
         } 
         #endregion
 

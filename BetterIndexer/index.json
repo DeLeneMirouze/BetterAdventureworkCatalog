@@ -195,6 +195,40 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "BurryWhiteColor",
+            "functionAggregation": "minimum",
+            "functions": [
+                {
+                    "type": "magnitude",
+                    "fieldName": "booster",
+                    "boost": 10,
+                    "interpolation": "constant",
+                    "magnitude": {
+                        "boostingRangeStart": 2,
+                        "boostingRangeEnd": 15,
+                        "constantBoostBeyondRange": false
+                    }
+                }
+            ]
+        }
+        ,
+          {
+            "name": "MiddlecostBikes",
+            "functions": [
+                {
+                    "type": "magnitude",
+                    "fieldName": "listPrice",
+                    "boost": 10,
+                    "interpolation": "constant",
+                    "magnitude": {
+                        "boostingRangeStart": 200,
+                        "boostingRangeEnd": 300,
+                        "constantBoostBeyondRange": false
+                    }
+                }
+            ]
         }
     ]
 }
