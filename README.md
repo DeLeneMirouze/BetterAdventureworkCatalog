@@ -1,3 +1,6 @@
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
+
 # BetterAdventureworkCatalog
 
 This repository is a Proof of Concept for Azure Search
