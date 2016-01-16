@@ -16,7 +16,7 @@ namespace DemoConcept
         #region Constructor
         public AzureSearch()
         {
-            ServiceUri = new Uri("https://" + ConfigurationManager.AppSettings["ServiceName"] + ".search.windows.net");
+            ServiceUri = new Uri("https://" + ConfigurationManager.AppSettings["Azure.Search.ServiceName"] + ".search.windows.net");
             VersionString = ConfigurationManager.AppSettings["Azure.Search.ApiVersionString"];
             ApiKey = ConfigurationManager.AppSettings["Azure.Search.ApiKey"];
         }
