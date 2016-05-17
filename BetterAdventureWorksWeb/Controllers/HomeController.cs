@@ -43,12 +43,12 @@ namespace BetterAdventureWorksWeb.Controllers
         #endregion
 
         #region Search
-        public ActionResult Search([FromUri]SearchQuery searchQuery)
+        public async Task<ActionResult> Search([FromUri]SearchQuery searchQuery)
         {
             ViewBag.Query = searchQuery.Query;
             ViewBag.Sort = searchQuery.OrderBy;
 
-            SearchQueryResult searchQueryResult = _catalogSearch.Search(searchQuery);
+            SearchQueryResult searchQueryResult = await _catalogSearch.Search(searchQuery);
             SearchViewModel vm = _searchViewModelBuilder.Build(searchQueryResult, Request.Url);
 
             return View(vm);
@@ -61,9 +61,9 @@ namespace BetterAdventureWorksWeb.Controllers
         /// </summary>
         /// <param name="term">terme saisi</param>
         /// <returns></returns>
-        public ActionResult Suggest(string term)
+        public async Task<ActionResult> Suggest(string term)
         {
-            var retour = _catalogSearch.Suggestion(term);
+            var retour = await _catalogSearch.Suggestion(term);
             List<string> suggestions = _suggestViewModelBuilder.Build(retour);
 
             return new JsonResult
@@ -75,10 +75,10 @@ namespace BetterAdventureWorksWeb.Controllers
         #endregion
 
         #region Detail
-        public ActionResult Detail(string productID)
+        public async Task<ActionResult> Detail(string productID)
         {
             LookupQuery lookupQuery = new LookupQuery(productID);
-            LookupQueryResult detailQueryResult = _catalogSearch.SearchById(lookupQuery);
+            LookupQueryResult detailQueryResult = await _catalogSearch.SearchById(lookupQuery);
             DetailViewModel vm = _detailViewModelBuilder.Build(detailQueryResult, Request.Url);
 
             return View(vm);

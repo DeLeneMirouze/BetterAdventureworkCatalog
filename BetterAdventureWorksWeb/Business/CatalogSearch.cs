@@ -6,7 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web; 
+using System.Threading.Tasks;
+using System.Web;
 #endregion
 
 namespace BetterAdventureWorksWeb.Business
@@ -31,14 +32,14 @@ namespace BetterAdventureWorksWeb.Business
         /// </summary>
         /// <param name="term"></param>
         /// <returns></returns>
-        public IEnumerable<SuggestionResultRecord> Suggestion(string term)
+        public async Task<IEnumerable<SuggestionResultRecord>> Suggestion(string term)
         {
             if (string.IsNullOrWhiteSpace(term) || term.Length < 3)
             {
                 return null;
             }
 
-            IApiResponse<SuggestionResult> result = _catalogSearchRepository.Suggestion(IndexName, term);
+            IApiResponse<SuggestionResult> result = await _catalogSearchRepository.Suggestion(IndexName, term);
             if (!result.IsSuccess)
             {
                 return null;
@@ -54,7 +55,7 @@ namespace BetterAdventureWorksWeb.Business
         /// </summary>
         /// <param name="searchQuery"></param>
         /// <returns></returns>
-        public SearchQueryResult Search(SearchQuery searchQuery)
+        public async Task<SearchQueryResult> Search(SearchQuery searchQuery)
         {
             if (string.IsNullOrEmpty(searchQuery.Query))
             {
@@ -73,7 +74,7 @@ namespace BetterAdventureWorksWeb.Business
                  .Select("productID")
                  .Select("listPrice");
    
-            var result = _catalogSearchRepository.Search(IndexName, searchQuery);
+            var result = await _catalogSearchRepository.Search(IndexName, searchQuery);
             if (!result.IsSuccess)
             {
                 return null;
@@ -89,9 +90,9 @@ namespace BetterAdventureWorksWeb.Business
         /// </summary>
         /// <param name="searchQuery"></param>
         /// <returns></returns>
-        public LookupQueryResult SearchById(LookupQuery searchQuery)
+        public async Task<LookupQueryResult> SearchById(LookupQuery searchQuery)
         {
-            var result = _catalogSearchRepository.Lookup(IndexName, searchQuery);
+            var result = await _catalogSearchRepository.Lookup(IndexName, searchQuery);
             if (!result.IsSuccess)
             {
                 return null;

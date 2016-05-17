@@ -1,6 +1,9 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using RedDog.Search.Http;
+using Microsoft.Azure;
+using BetterAdventureWorksWeb.Repository;
 
 namespace BetterAdventureWorksWeb.App_Start
 {
@@ -35,8 +38,15 @@ namespace BetterAdventureWorksWeb.App_Start
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
+
+            container.RegisterType<ApiConnection>(
+                new InjectionFactory(c =>
+                    ApiConnection.Create(
+                    CloudConfigurationManager.GetSetting("Azure.Search.ServiceName"),
+                    CloudConfigurationManager.GetSetting("Azure.Search.ApiKey"))));
+
+            container.RegisterType<ICatalogSearchRepository, CatalogSearchRepository>();
+
         }
     }
 }

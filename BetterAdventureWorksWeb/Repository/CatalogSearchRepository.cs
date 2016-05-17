@@ -3,6 +3,7 @@ using RedDog.Search;
 using RedDog.Search.Http;
 using RedDog.Search.Model;
 using System;
+using System.Threading.Tasks;
 
 #endregion
 
@@ -27,11 +28,11 @@ namespace BetterAdventureWorksWeb.Repository
         /// </summary>
         /// <param name="indexName">Nom du catalogue dans lequel lancer la recherche</param>
         /// <param name="term"></param>
-        public IApiResponse<SuggestionResult> Suggestion(string indexName, string term)
+        public async Task<IApiResponse<SuggestionResult>> Suggestion(string indexName, string term)
         {
             SuggestionQuery suggestionQuery = new SuggestionQuery(term);
-            var result =  _searchClient.SuggestAsync(indexName, suggestionQuery);
-            return result.Result;
+            var result =  await _searchClient.SuggestAsync(indexName, suggestionQuery);
+            return result;
         } 
         #endregion
 
@@ -42,10 +43,10 @@ namespace BetterAdventureWorksWeb.Repository
         /// <param name="indexName">Nom du catalogue dans lequel lancer la recherche</param>
         /// <param name="searchQuery"></param>
         /// <returns></returns>
-        public IApiResponse<SearchQueryResult> Search(string indexName, SearchQuery searchQuery)
+        public async Task<IApiResponse<SearchQueryResult>> Search(string indexName, SearchQuery searchQuery)
         {
             var result = _searchClient.SearchAsync(indexName, searchQuery);
-            return result.Result;
+            return await result;
         } 
         #endregion
 
@@ -56,10 +57,10 @@ namespace BetterAdventureWorksWeb.Repository
         /// <param name="indexName">Nom du catalogue dans lequel lancer la recherche</param>
         /// <param name="lookupQuery"></param>
         /// <returns></returns>
-        public IApiResponse<LookupQueryResult> Lookup(string indexName, LookupQuery lookupQuery)
+        public async Task<IApiResponse<LookupQueryResult>> Lookup(string indexName, LookupQuery lookupQuery)
         {
             var result = _searchClient.LookupAsync(indexName, lookupQuery);
-            return result.Result;
+            return await result;
         }
         #endregion
 
